@@ -1,16 +1,16 @@
-###Simple demo of distributed computational system for hashed password cracking.
+### Simple demo of distributed computational system for hashed password cracking.
 
-####Idea 
+#### Idea 
 Use Rabbit MQ message broker to distribute easily computable tasks to unlimited number of connected workers.
 Single server instance handle information exchange between clients, workers and Rabbit MQ.
 
 
-####Prerequisites
+#### Prerequisites
 [Rabbit MQ](https://www.rabbitmq.com/download.html) installed and running.
 
     
     
-####Architecture
+#### Architecture
 <pre>
                       _____________________________________________________________________
                      |                          result - found                             |
@@ -28,7 +28,7 @@ Single server instance handle information exchange between clients, workers and 
 </pre>
 
     
-####Run
+#### Run
         1. cd distributed-password-cracker/runners
         2. ruby server_runner.rb
         2. ruby client_runner.rb
@@ -46,14 +46,14 @@ Single server instance handle information exchange between clients, workers and 
          
          
               
-####Sample run screens
+#### Sample run screens
 
 ![Server screen](res/server.jpg)
 ![Client screen](res/client.jpg)
 ![Worker screen](res/worker.jpg)
 ![Worker screen](res/worker_found.jpg)
 
-####Tasks
+#### Tasks
 In module Conf (file config.rb) PATTERN constant is defined. It is '\*\*\*' by default.
 It means that each task requires to calculate 26^3 = 17576 hash combinations. At the beginning 26 tasks are added to queue.
 <br/>
